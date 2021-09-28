@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="row">
+    <div class="textis">
+      <h2>Login</h2>
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+        <div class="field">
+          <%= f.label :email, class: "line ten columns" %>
+            <%= f.email_field :email, autofocus: true, autocomplete: "email" , class: "six columns line " %>
+        </div>
+        <div class="field">
+          <%= f.label :password, class: "line ten columns" %>
+            <%= f.password_field :password, autocomplete: "current-password" , class: "six columns line" %>
+        </div>
+        <% if devise_mapping.rememberable? %>
+          <div class="field">
+            <%= f.check_box :remember_me, class: "one column line" %>
+              <%= f.label :remember_me, class: "two columns line" %>
+          </div>
+          <% end %>
+            <div class="actions ">
+              <%= f.submit "Login" , class: "btn btn btn-outline-primary" %>
+            </div>
+            <%= render "devise/shared/links" %>
+              <% end %>
+    </div>
+  </div>
+</div>
